@@ -81,19 +81,19 @@ const Create = () => {
         <h2>Create</h2>
         <div >
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" autoComplete='off' onChange={(e) => { setName(e.target.value) }} />
+          <input type="text" name="name" id="name" autoComplete='off' required={true} onChange={(e) => { setName(e.target.value) }} />
 
           <label htmlFor="ingredients">Ingredients</label>
-          <textarea type="text" name="ingredients" id="ingredients" autoComplete='off' onChange={(e) => { setIngredients(e.target.value) }} />
+          <textarea type="text" name="ingredients" id="ingredients" required={true} autoComplete='off' onChange={(e) => { setIngredients(e.target.value) }} />
 
           <label htmlFor="instructions">Instructions</label>
-          <textarea name="instructions" id="instructions" onChange={(e) => { setInstructions(e.target.value) }} />
+          <textarea name="instructions" id="instructions" required={true} onChange={(e) => { setInstructions(e.target.value) }} />
 
           <label htmlFor="image">Image</label>
-          <input type="file" name="image" id="image" onChange={(e) => { setImage(e.target.files[0]) }} />
+          <input type="file" name="image" id="image" required={true} onChange={(e) => { setImage(e.target.files[0]) }} />
 
           <label htmlFor="cookingTime">Cooking Time</label>
-          <input type="number" name="cookingTime" id="cookingTime" onChange={(e) => { setCookingTime(e.target.value) }} />
+          <input type="number" name="cookingTime" id="cookingTime" required={true} onChange={(e) => { setCookingTime(e.target.value) }} />
 
           <button type='submit'>Submit</button>
         </div>

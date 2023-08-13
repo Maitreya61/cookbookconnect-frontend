@@ -21,10 +21,19 @@ const Login = () => {
                 username,
                 password,
             });
-            
-            setCookies("access_token", response.data.token);
-            window.localStorage.setItem("userID", response.data.userID);
-            navigate("/")
+            if(response.data.message ==="User Doesn't exists"){
+                console.log(response.data.message);
+                alert("User Doesnot Exist");
+            }else{
+                console.log(response.data.message);
+               if(response.data.message === "UserName or Password Doesnt Matchs"){
+                alert("UserName or Password Doesnt Match");
+               }else{
+                setCookies("access_token", response.data.token);
+                window.localStorage.setItem("userID", response.data.userID);
+                navigate("/")
+               }
+            }
 
         } catch (err) {
             console.log(err);

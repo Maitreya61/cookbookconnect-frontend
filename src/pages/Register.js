@@ -10,11 +10,16 @@ const Register = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post("https://cookbookconnect-backend2.vercel.app/auth/register", {
+            const response = await axios.post("https://cookbookconnect-backend2.vercel.app/auth/register", {
                 username,
                 password,
             });
-            alert("Registered Succesfully!");
+            if(response.data.Error === 'user already exists'){
+                alert("User Already Exists");
+            }else{
+                alert("Registered Succesfully!");
+            }
+            
         } catch (err) {
             alert(err)
         }
