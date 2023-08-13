@@ -15,7 +15,7 @@ const Login = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post("http://localhost:3001/auth/login", {
+            const response = await axios.post("https://cookbookconnect-backend2.vercel.app/auth/login", {
                 username,
                 password,
             });

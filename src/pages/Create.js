@@ -24,7 +24,7 @@ const Create = () => {
 
   useEffect(() => {
     if (url) {
-      axios.post("http://localhost:3001/recipes", {
+      axios.post("https://cookbookconnect-backend2.vercel.app/recipes", {
         name,
         ingredients,
         instructions,
