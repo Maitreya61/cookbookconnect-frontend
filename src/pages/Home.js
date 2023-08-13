@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await axios.get("https://cookbookconnect-backend2.vercel.app/recipes");
+        const response = await axios.get("https://cookbookconnect-backend.vercel.app/recipes");
         setUnfilRecipes(response.data);
       } catch (error) {
         console.log(error);
@@ -20,7 +20,7 @@ const Home = () => {
     };
     const fetchSavedRecipe = async () => {
       try {
-        const response = await axios.get(`https://cookbookconnect-backend2.vercel.app/recipes/saved/ids/${userID}`);
+        const response = await axios.get(`https://cookbookconnect-backend.vercel.app/recipes/saved/ids/${userID}`);
         setSavedRecipes(response.data.savedRecipes);
       } catch (error) {
         console.log(error);
@@ -41,7 +41,7 @@ const Home = () => {
 
   const saveRecipe = async (recipeID) => {
     try {
-      const response = await axios.put("https://cookbookconnect-backend2.vercel.app/recipes", {
+      const response = await axios.put("https://cookbookconnect-backend.vercel.app/recipes", {
         recipeID,
         userID,
       });
@@ -54,7 +54,7 @@ const Home = () => {
 
   const deleteRecipe = async (recipeID) => {
     try {
-      await axios.delete(`https://cookbookconnect-backend2.vercel.app/recipes/${recipeID}`);
+      await axios.delete(`https://cookbookconnect-backend.vercel.app/recipes/${recipeID}`);
     } catch (error) {
       console.log(error);
     }

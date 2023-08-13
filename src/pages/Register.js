@@ -10,7 +10,7 @@ const Register = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post("https://cookbookconnect-backend2.vercel.app/auth/register", {
+            const response = await axios.post("https://cookbookconnect-backend.vercel.app/auth/register", {
                 username,
                 password,
             });

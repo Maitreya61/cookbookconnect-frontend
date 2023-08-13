@@ -12,7 +12,7 @@ const Saved = () => {
     const fetchSavedRecipe = async () => {
       try {
         const response = await axios.get(
-          `https://cookbookconnect-backend2.vercel.app/recipes/saved/${userID}`
+          `https://cookbookconnect-backend.vercel.app/recipes/saved/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
       } catch (error) {
@@ -25,7 +25,7 @@ const Saved = () => {
   const removeRecipe = async (recipeID) => {
     try {
       const response = await axios.patch(
-        "https://cookbookconnect-backend2.vercel.app/recipes/saved",
+        "https://cookbookconnect-backend.vercel.app/recipes/saved",
         {
           recipeID,
           userID,

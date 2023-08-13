@@ -22,7 +22,7 @@ const Create = () => {
 
   useEffect(() => {
     if (url) {
-      axios.post("https://cookbookconnect-backend2.vercel.app/recipes", {
+      axios.post("https://cookbookconnect-backend.vercel.app/recipes", {
         name,
         ingredients,
         instructions,
