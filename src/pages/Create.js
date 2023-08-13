@@ -3,7 +3,6 @@ import { useUserID } from '../hooks/useUserID';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import ClockLoader from "react-spinners/ClockLoader";
-import {useCookies} from 'react-cookie'
 import NotLoggedIn from '../components/NotLoggedIn';
 
 const Create = () => {
@@ -15,7 +14,6 @@ const Create = () => {
   const [image, setImage] = useState("");
   const [cookingTime, setCookingTime] = useState(0);
   const [loading,setLoading] = useState(false);
-  const [cookies, _] = useCookies(["access_token"])
 
 
   const userOwner = useUserID();
@@ -36,7 +34,7 @@ const Create = () => {
         .then(navigate("/"));
     }
 
-  }, [url,name,ingredients,instructions,userOwner,navigate,cookingTime,cookies])
+  }, [url,name,ingredients,instructions,userOwner,navigate,cookingTime])
 
   const postDetails = () => {
     const data = new FormData()

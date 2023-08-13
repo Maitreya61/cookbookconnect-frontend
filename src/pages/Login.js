@@ -10,7 +10,9 @@ const Login = () => {
 
     const navigate = useNavigate();
 
+    /* eslint-disable */
     const [_, setCookies] = useCookies(["access_token"])
+    /* eslint-enable */
 
     const handleSubmit = async (event) => {
         event.preventDefault();
