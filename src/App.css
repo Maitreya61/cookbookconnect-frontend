@@ -1,38 +1,485 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navheader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 2rem;
+	background-color: #7DC855;
+	color: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar a {
+	margin: 0 0.5rem;
+	color: #ffffff;
+	text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar a:hover {
+	color: #B8E986;
 }
 
-.App-link {
-  color: #61dafb;
+.navheader .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #ffffff;
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navheader .navbar {
+	display: inline-flex;
+	align-items: center;
+
+}
+
+.register {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.register h2 {
+	text-align: center;
+	padding: 20px 0 20px 0;
+	border-bottom: 1px solid silver;
+}
+
+.register form {
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+
+.register .form-group {
+	margin-top: 20px;
+}
+
+
+
+.register input {
+	width: 100%;
+	margin: 10px 0;
+	padding: 10px 5px;
+	height: 40px;
+	font-size: 16px;
+	background: none;
+	outline: none;
+}
+
+.register .button {
+	background: #7DC855;
+	border: 1px solid #7DC855;
+	border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+	box-sizing: border-box;
+	width: 200px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: block;
+	font-size: medium;
+	font-weight: 800;
+	line-height: 16px;
+	min-height: 40px;
+	outline: 0;
+	padding: 12px 14px;
+	margin: 20px auto;
+	text-align: center;
+	text-rendering: geometricprecision;
+	text-transform: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.register .button:hover,
+.register .button:active {
+	background-color: initial;
+	background-position: 0 0;
+	color: #7DC855;
+}
+
+.register .button:active {
+	opacity: .5;
+}
+
+
+.register .login {
+	text-align: center;
+	padding: 10px 0 20px 0;
+}
+
+
+.create input {
+	width: 1000px;
+	margin: 10px 0;
+	padding: 10px 5px;
+	height: 40px;
+	font-size: 16px;
+	background: none;
+	outline: none;
+}
+
+.create textarea {
+	width: 1000px;
+	margin: 10px 0;
+	padding: 10px 5px;
+	height: 80px;
+	font-size: 16px;
+}
+
+.create {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background-color: white;
+	margin: 20px auto;
+	width: 1100px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.create label {
+	display: block;
+}
+
+.create form {
+	display: flex;
+	flex-direction: column;
+}
+
+.create button {
+	background: #7DC855;
+	border: 1px solid #7DC855;
+	border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+	box-sizing: border-box;
+	width: 200px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: block;
+	font-size: medium;
+	font-weight: 800;
+	line-height: 16px;
+	min-height: 40px;
+	outline: 0;
+	padding: 12px 14px;
+	margin: 20px auto;
+	text-align: center;
+	text-rendering: geometricprecision;
+	text-transform: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.recipe {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	padding: 20px;
+	margin: 20px;
+	height: auto;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	padding: 10px;
+	margin: 10px 40px;
+}
+
+h1 {
+	text-align: left;
+}
+
+p {
+	font-size: 16px;
+	white-space: pre-line;
+}
+
+.recipes {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 10px;
+	overflow: hidden;
+}
+
+.image {
+	grid-column: 1/5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.details {
+	grid-column: 5/13;
+}
+
+.recipes img {
+	width: 400px;
+	height: auto;
+	/* justify-content: center; */
+}
+
+
+
+.loading {
+	text-align: center;
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-title {
+	text-align: center;
+	margin: 30px;
+}
+
+.search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search input {
+	margin-bottom: 30px;
+	width: 400px;
+	height: 40px;
+	font-size: large;
+	padding: 10px;
+	border-color: gray;
+	border-radius: 5px;
+}
+
+.details button{
+	background: #7DC855;
+	border: 1px solid #7DC855;
+	border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+	box-sizing: border-box;
+	width: 100px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: block;
+	font-size: medium;
+	font-weight: 800;
+	/* line-height: 16px; */
+	max-height: 30px;
+	outline: 0;
+	padding: 5px 14px;
+	margin: 5px 0;
+	margin-right: 10px;
+	text-align: center;
+	text-rendering: geometricprecision;
+	text-transform: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.details button:disabled{
+	background: gray;
+}
+
+.title{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 10px 0;
+}
+
+.sdbuttons{
+	display: flex;
+	flex-direction: row;
+}
+
+.title-image{
+	width: 60px;
+	height: 80px;
+	margin-right: 20px;
+}
+
+.navheader-title{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.navheader-title h3{
+	font-family: 'Barlow Condensed', sans-serif;
+}
+.navheader-title span{
+	font-family: 'Barlow Condensed', sans-serif;
+}
+
+.not-login{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.saved-not-login{
+	width: 90%;
+	height: 90vh;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.logo{
+	margin: 30px;
+}
+
+.not-login-details{
+	text-align: center;
+}
+
+.not-login-details h1{
+	color: #7DC855;
+	text-align: center;
+	margin: 20px;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: 40px;
+}
+
+.not-login-details h3,h4{
+	margin: 10px;
+}
+
+.not-login-details a{
+	color: #7DC855;
+	text-decoration: none;
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.navheader .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.navheader .navbar {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: #7DC855;
+		transition: 1s;
+	}
+
+	.navheader .responsive_nav {
+		transform: translateY(100vh);
+	}
+
+	.navbar .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	.navbar a {
+		font-size: 1.5rem;
+	}
+
+	.register {
+		z-index: -1;
+		width: 330px;
+	}
+
+	.register .button {
+		width: 150px;
+	}
+
+
+	.recipes {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+
+	.recipes img {
+		max-width: 290px;
+		height: auto;
+	}
+
+	.create {
+		width: 300px;
+	}
+
+	.create label {
+		display: block;
+	}
+
+	.create input {
+		width: 200px;
+		margin: 20px 0;
+	}
+
+	.create textarea {
+		width: 200px;
+	}
+
+	.search input {
+		width: 300px;
+	}
+
+	.details button{
+		width: 50px;
+		padding: 5px 0;
+		font-size: 12px;
+	}
+
+	.saved-not-login{
+		flex-direction: column;
+	}
+
 }
